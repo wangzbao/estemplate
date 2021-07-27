@@ -154,6 +154,7 @@ public class ESController {
                 .filter(dtRange)
 //                .filter(QueryBuilders.termsQuery("city", cityList))
 //                .must(QueryBuilders.wildcardQuery("city", "*"));
+                // 判断是否为空，当在es总存储的是""的时候失效
 //                .must(QueryBuilders.existsQuery("city"));
                 .must(QueryBuilders.rangeQuery("city").gt(0));
 //                .must(termQuery("uid", "5"));
